@@ -22,4 +22,12 @@ public class Taco {
     public List<String> getIngredients() {
         return ingredients;
     }
+
+    @Override
+    public String toString() {
+        return "Taco{" +
+                "name='" + name + '\'' +
+                ", ingredients=" + ingredients +
+                '}';
+    }
 }

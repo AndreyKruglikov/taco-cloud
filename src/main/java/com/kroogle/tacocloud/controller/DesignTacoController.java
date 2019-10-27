@@ -2,11 +2,11 @@ package com.kroogle.tacocloud.controller;
 
 import com.kroogle.tacocloud.model.Ingredient;
 import com.kroogle.tacocloud.model.Taco;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ import java.util.List;
 
 import static com.kroogle.tacocloud.model.Ingredient.Type;
 
-@Slf4j
 @Controller
 @RequestMapping("/design")
 public class DesignTacoController {
@@ -42,8 +41,15 @@ public class DesignTacoController {
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
         }
+
         model.addAttribute("design", new Taco());
         return "design";
+    }
+
+    @PostMapping
+    public String processDesign(Taco taco) {
+        LOGGER.info("Processing design: " + taco);
+        return "redirect:/orders/current";
     }
 
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
