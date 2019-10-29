@@ -5,10 +5,12 @@ import com.kroogle.tacocloud.model.Taco;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +49,10 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(Taco taco) {
+    public String processDesign(@Valid Taco taco, Errors errors) {
+        if (errors.hasErrors()) {
+            return "design";
+        }
         LOGGER.info("Processing design: " + taco);
         return "redirect:/orders/current";
     }
