@@ -1,8 +1,12 @@
 package com.kroogle.tacocloud.model;
 
+import java.sql.Date;
 import java.util.List;
 
 public class Taco {
+
+    private Long id;
+    private Date createdAt;
 
     private String name;
     private List<String> ingredients;
@@ -23,10 +27,20 @@ public class Taco {
         return ingredients;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
     @Override
     public String toString() {
         return "Taco{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                ", name='" + name + '\'' +
                 ", ingredients=" + ingredients +
                 '}';
     }
