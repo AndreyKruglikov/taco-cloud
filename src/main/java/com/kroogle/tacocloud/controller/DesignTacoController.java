@@ -1,7 +1,7 @@
 package com.kroogle.tacocloud.controller;
 
-import com.kroogle.tacocloud.data.jdbc.IngredientRepository;
-import com.kroogle.tacocloud.data.jdbc.TacoRepository;
+import com.kroogle.tacocloud.data.jpa.IngredientRepository;
+import com.kroogle.tacocloud.data.jpa.TacoRepository;
 import com.kroogle.tacocloud.model.Ingredient;
 import com.kroogle.tacocloud.model.Order;
 import com.kroogle.tacocloud.model.Taco;

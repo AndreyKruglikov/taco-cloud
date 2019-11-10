@@ -2,15 +2,23 @@ package com.kroogle.tacocloud.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
 @Entity
 public class Ingredient {
 
     @Id
-    private final String id;
-    private final String name;
-    private final Type type;
+    private String id;
+
+    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private Type type;
+
+    public Ingredient() {
+    }
 
     public Ingredient(String id, String name, Type type) {
         this.id = id;

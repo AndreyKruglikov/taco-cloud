@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="Taco_Order")
+@Table(name = "Taco_Order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = -928671692512677246L;
@@ -49,6 +49,9 @@ public class Order implements Serializable {
 
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
+
+    public Order() {
+    }
 
     @PrePersist
     void placedAt() {
