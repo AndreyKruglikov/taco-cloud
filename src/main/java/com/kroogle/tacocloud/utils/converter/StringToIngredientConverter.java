@@ -1,6 +1,6 @@
 package com.kroogle.tacocloud.utils.converter;
 
-import com.kroogle.tacocloud.data.IngredientRepository;
+import com.kroogle.tacocloud.data.jdbc.IngredientRepository;
 import com.kroogle.tacocloud.model.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;

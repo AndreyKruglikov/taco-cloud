@@ -1,4 +1,4 @@
-package com.kroogle.tacocloud.data;
+package com.kroogle.tacocloud.data.jdbc;
 
 import com.kroogle.tacocloud.model.Ingredient;
 

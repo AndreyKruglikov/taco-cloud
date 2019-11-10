@@ -1,5 +1,6 @@
-package com.kroogle.tacocloud.data;
+package com.kroogle.tacocloud.data.jdbc;
 
+import com.kroogle.tacocloud.data.jdbc.IngredientRepository;
 import com.kroogle.tacocloud.model.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
