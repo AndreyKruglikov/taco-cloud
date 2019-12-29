@@ -22,7 +22,7 @@ public class RegistrationController {
 
     @GetMapping
     public String registerForm() {
-        return "registration";
+        return "security/registration";
     }
 
     @PostMapping

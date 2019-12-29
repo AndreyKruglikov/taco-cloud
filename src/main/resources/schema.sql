@@ -44,7 +44,7 @@ alter table Order_Tacos add foreign key (taco) references Taco(id);
 create table if not exists User (
     id                  identity,
     username            varchar(50)     not null,
-    password            varchar(50)     not null,
+    password            varchar(100)    not null,
     fullname            varchar(50)     ,
     street              varchar(3)      ,
     city                varchar(10)     ,

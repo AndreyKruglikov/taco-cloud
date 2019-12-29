@@ -8,3 +8,5 @@ insert into Ingredient (id, name, type) values ('CHED', 'Cheddar', 'CHEESE');
 insert into Ingredient (id, name, type) values ('JACK', 'Monterrey Jack', 'CHEESE');
 insert into Ingredient (id, name, type) values ('SLSA', 'Salsa', 'SAUCE');
 insert into Ingredient (id, name, type) values ('SRCR', 'Sour Cream', 'SAUCE');
+
+insert into USER (id, username , password) values ('1', '1', 'e5b28f02470125e4441644258c5eea799c411dbd80867e4c69e458fca7e25aa072e627e2749d50b8');
