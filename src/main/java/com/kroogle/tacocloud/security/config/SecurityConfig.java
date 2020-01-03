@@ -25,11 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new StandardPasswordEncoder("53cr3t");
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
-//    }
-
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
@@ -42,7 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .formLogin()
                         .loginPage("/login")
-                        .defaultSuccessUrl("/taco", true);
+                            .defaultSuccessUrl("/taco", true)
+                    .and()
+                        .logout()
+                            .logoutSuccessUrl("/login");
         httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
     }
